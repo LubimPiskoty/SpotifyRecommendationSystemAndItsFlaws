@@ -9,6 +9,8 @@
 \usepackage{graphicx}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+\usepackage[colorinlistoftodos,textsize=tiny]{todonotes}
+
 
 \usepackage{cite}
 %\usepackage{times}
@@ -31,7 +33,7 @@
 \maketitle
 
 \begin{abstract}
-\ldots
+ababbaabbaba
 \end{abstract}
 
 
@@ -41,25 +43,40 @@
 Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
 
 Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
-Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
+Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{recommendationsystem}.
 Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
 Záverečné poznámky prináša časť~\ref{zaver}.
 
 
+% Pointa je ukázať ako spotify recommendation system zlyháva pri skladateľoch s menším počtom stremov a naopak preferuje odporúčať skladateľov, ktorý sú vo svojich žánroch velikáni.
+% Výsledkom tohto je že pre použivateľov, ktorý od tohto recommendation systemu očakávajú rozšírenie obzorov v oblasti alternatívnych žanrov alebo majú jednoducho napočúvané toľko že im spotify nevie odporučiť nič nové a cyklicky odporúča to isté
+% Kritika ze recommendation system sa zakladá na preferencií ostatnyćh použivateľov a väčšina použivateľov počúva hudbu podľa trendov a nie podľa preferencie a tým pádom presnosť odporúčanie pre skupinu, ktorá sa trendom snaží vyhýbať
+\section{Recommendation system} \label{recommendationsystem}
+% Ako funguje, na akých dátach vyhodnocuje odporúčanie
+% Prečo je vyhodnocovanie týchto dát mylné a ako to ovplyvňuje celkovy UX
+\cite{hodgson2021spotify,}
+Nejaky text
+\todo{Blablbla}
+a tak dalej
+\section{Genre representation} \label{genre}
+\subsection{Genre majorities} \label{genre:majorities}
+\subsection{Genre minorities} \label{genre:minotiries}
 
-\section{Nejaká časť} \label{nejaka}
+\section{Cyclic recommentation} \label{cyclic}
 
 
 
 \section{Záver} \label{zaver} % prípadne iný variant názvu
-
+% Návrh na zlepšenie a zbavenie sa problémmov
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
 
 
 % týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
-\bibliographystyle{abbrv} % prípadne alpha, abbrv alebo hociktorý iný
+\newpage
+\listoftodos[Notes]
+\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
 \bibliography{literatura}
 
 \end{document}
