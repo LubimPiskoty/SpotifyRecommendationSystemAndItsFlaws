@@ -4,15 +4,15 @@
 \documentclass{beamer}
 
 %\usetheme{Warsaw}
-%\usetheme{Antibes}
-\usetheme{JuanLesPins}
+\usetheme{Antibes}
+%\usetheme{JuanLesPins}
 %\usetheme{Goettingen}
 
-\usecolortheme{seahorse}
+%\usecolortheme{seahorse}
 %\usecolortheme{dolphin}
 %\usecolortheme{rose}
 % https://deic.uab.cat/~iblanes/beamer_gallery/
-%\usecolortheme{beaver}
+\usecolortheme{beaver}
 
 %\useoutertheme[]{sidebar}
 
@@ -71,7 +71,7 @@
 
 
 
-\author{Ján Lang}
+\author{Timon Lumír Fillo}
 %\url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
 %{\tiny \url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
 \institute{
@@ -79,12 +79,12 @@
 	Fakulta informatiky a informačných technológií\\
 	Slovenská technická univerzita v Bratislave}
 
-\subtitle{\vspace{3mm} Metódy inžinierskej práce 2019/2020}
+\subtitle{\vspace{3mm} Metódy inžinierskej práce 2024/2025}
 
-\title{Príklad prezentácie
+\title{Spotify recommendation system and its flwas
 }
 
-\date{\footnotesize 5. november 2020}
+\date{\footnotesize 22. Október 2024}
 
 
 
@@ -95,24 +95,18 @@
 \titlepage
 \end{frame}
 
-
-\begin{frame}[fragile=singleslide]\frametitle{O čom to je}
-Ešte pre prehľadom prezentácie sa zvyčajne uvádza motivácia.
-
-Bežne sa aj tu používajú odrážky, ale tento text je naschvál uvedený bez odrážok. Niekedy môže byť potrebné uviesť aj citáty\ldots{}
-
-Toto je len príklad slajdov. Ako urobiť dobrú prezentáciu bolo vysvetlené na prednáške.
-\end{frame}
-
+\section{Úvod}
+\section{Jadro}
+\section{Záver}
+\section{Priestor pre diskusiu}
 
 \begin{frame}[fragile=singleslide]\frametitle{Prehľad}
 \tableofcontents
 \end{frame}
 
 
-\section{Nejaká časť}
 % príkaz \ssection by vytvoril zvláštný slajd s názvom časti - v krátkych prezentáciách to prekáža, lebo oberá o čas
-
+\section{Odrazky}
 \begin{frame}[fragile=singleslide]\frametitle{Nejaký slajd}
 \begin{itemize}
 \item Odrážky na prvej úrovni
@@ -125,91 +119,98 @@ Toto je len príklad slajdov. Ako urobiť dobrú prezentáciu bolo vysvetlené n
 \end{itemize}
 \end{frame}
 
+\section{Obrazok}
+\begin{frame}[fragile=singleslide]\frametitle{Logo fiit}
 
+\includegraphics[width=\linewidth]{fiitLogo/nahlad.jpg}
 
-\section{Ďalšia časť}
-
-\begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
-\begin{itemize}
-\item Nejaký text
-\item Ďalší text -- \emph{zvýraznený text}
-\item \emp{Kľúčová poznámka} % príkaz definovaný v preambule
-
-% odrážka s odkazom na zdroj:
-\item Bol použitý balík beamer\footcite{\url{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
-\end{itemize}
 \end{frame}
 
+%
+%
+%\section{Ďalšia časť}
+%
+%\begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
+%\begin{itemize}
+%\item Nejaký text
+%\item Ďalší text -- \emph{zvýraznený text}
+%\item \emp{Kľúčová poznámka} % príkaz definovaný v preambule
+%
+%% odrážka s odkazom na zdroj:
+%\item Bol použitý balík beamer\footcite{\url{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
+%\end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}[fragile=singleslide]\frametitle{Slajd len s obrázkom}
+%%\includegraphics[scale=.35]{diagram.pdf}
+%% pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
+%% scale určuje veľkosť obrázku
+%
+%{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
+%\end{frame}
+%
+%
+%\begin{frame}[fragile=singleslide]\frametitle{Zvýraznenie syntaxe}
+%\begin{itemize}
+%\item Na zvýraznenie syntaxe stačí použiť balík listings so správne nastaveným programovacím jazykom
+%\begin{lstlisting}
+%int na_druhu(int i) {
+%   return i * i;
+%}
+%
+%int main() {
+%   printf("%d", na_druhu(118));
+%   return 0;
+%}
+%\end{lstlisting}
+%
+%\item Jazyk C++ je ešte zaujímavejší: je multiparadigmový\footcite{\url{J. O. Coplien. Multi-Paradigm Design for C++. Addison-Wesley, 1998.}}
+%\end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}[fragile=singleslide]\frametitle{Rámiky}
+%\begin{poznamka}
+%Text možno uviesť v rámiku
+%\end{poznamka}
+%
+%\begin{itemize}
+%\item Program
+%
+%\begin{program}
+%\begin{lstlisting}
+%void main() {
+%   printf("%d", na_druhu(118));
+%}
+%
+%void na_druhu(int i) {
+%   return i * i;
+%}
+%\end{lstlisting}
+%\end{program}
+%
+%\item Výstup
+%\begin{vystup}
+%\begin{lstlisting}
+%13924
+%\end{lstlisting}
+%\end{vystup}
+%
+%\end{itemize}
+%\end{frame}
 
-\begin{frame}[fragile=singleslide]\frametitle{Slajd len s obrázkom}
-%\includegraphics[scale=.35]{diagram.pdf}
-% pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
-% scale určuje veľkosť obrázku
-
-{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
-\end{frame}
 
 
-\begin{frame}[fragile=singleslide]\frametitle{Zvýraznenie syntaxe}
-\begin{itemize}
-\item Na zvýraznenie syntaxe stačí použiť balík listings so správne nastaveným programovacím jazykom
-\begin{lstlisting}
-int na_druhu(int i) {
-   return i * i;
-}
-
-int main() {
-   printf("%d", na_druhu(118));
-   return 0;
-}
-\end{lstlisting}
-
-\item Jazyk C++ je ešte zaujímavejší: je multiparadigmový\footcite{\url{J. O. Coplien. Multi-Paradigm Design for C++. Addison-Wesley, 1998.}}
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile=singleslide]\frametitle{Rámiky}
-\begin{poznamka}
-Text možno uviesť v rámiku
-\end{poznamka}
-
-\begin{itemize}
-\item Program
-
-\begin{program}
-\begin{lstlisting}
-void main() {
-   printf("%d", na_druhu(118));
-}
-
-void na_druhu(int i) {
-   return i * i;
-}
-\end{lstlisting}
-\end{program}
-
-\item Výstup
-\begin{vystup}
-\begin{lstlisting}
-13924
-\end{lstlisting}
-\end{vystup}
-
-\end{itemize}
-\end{frame}
-
-
-
-\section*{Zhodnotenie a ďalšia práca}
-% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
-
-\begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie a ďalšia práca}
-\begin{itemize}
-\item Každá prezentácia musí byť nejako uzavretá
-\item Ale vždy je čo robiť ďalej\ldots{}
-\end{itemize}
-\end{frame}
+%\section*{Zhodnotenie a ďalšia práca}
+%% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
+%
+%\begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie a ďalšia práca}
+%\begin{itemize}
+%\item Každá prezentácia musí byť nejako uzavretá
+%\item Ale vždy je čo robiť ďalej\ldots{}
+%\end{itemize}
+%\end{frame}
 
 
 \end{document}
