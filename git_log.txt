@@ -1,0 +1,126 @@
+commit d940b33b0b9e7d42e6ab1585146d32a0bef8185b
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:31:13 2024 +0200
+
+    <SCRUM-31><Kontrola cvičiacim>
+
+commit f1d812cd3eea4ee46f1d7385174ab7d229e54fe4
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:30:58 2024 +0200
+
+    <SCRUM-30><Odovzdanie>
+
+commit 1b664fea5ccb4970532f232904ea58288c0b0c75
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:30:31 2024 +0200
+
+    <SCRUM-29><Štylistické úpravy>
+
+commit f135194d8962018920a30aec870fd19c15c99adb
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:30:13 2024 +0200
+
+    <SCRUM-28><Kontrola gramatiky>
+
+commit 3a51bb26796459b34097d82db90ca96671ac0c2f
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:29:53 2024 +0200
+
+    <SCRUM-27><Ako tieto algoritmi ovplyvnuju tvorcov>
+
+commit 8025ac81c11f3fecc481178336a64dacffe03548
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:29:36 2024 +0200
+
+    <SCRUM-26><Analyza jej alogoritmov>
+
+commit 2d143c920cf1a9bd67289535410afe11c2b0877d
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:29:17 2024 +0200
+
+    <SCRUM-25><Opis spoločnosti Spotify>
+
+commit 61a62b84f51176c77ea888196fdb4e2055c89440
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 15 14:28:57 2024 +0200
+
+    <SCRUM-24><Zadefinovat štrukturu práce>
+
+commit 495e0ef9d5f791aeabfc24169589261444864e1e
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 8 15:16:25 2024 +0200
+
+    Oprava zmien z cvicenia
+
+commit d9648c55d0b530c1787cf95db3e8f85ba63003e3
+Merge: 2ea7f61 46e7053
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 8 15:07:34 2024 +0200
+
+    Merge remote-tracking branch 'refs/remotes/origin/predbeznaVerzia' into predbeznaVerzia
+
+commit 2ea7f61dbf2f12b2633bf5e77dcf450acf2b2381
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 8 15:05:47 2024 +0200
+
+    Cvicenie 4
+
+commit 46e7053db4b01e159d7ed29e5ab4024ba4f08f5c
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 8 14:55:44 2024 +0200
+
+    Dodatocne subory
+
+commit 35c07729721aac220a674c64bf67b3c0abfa8e41
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 8 14:53:27 2024 +0200
+
+    Cvicenie 4
+
+commit 9504e7e866f2ae3ec89fe91eb95b8e12ab6a08ae
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Sun Oct 6 11:25:40 2024 +0200
+
+    Fixed grammar and tried pdfcrop command
+
+commit 783c41ccc0bfcd1d410476b35e8b81dae7b78a62
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Sat Oct 5 14:46:50 2024 +0200
+
+    Minimal abstract word count achieved
+
+commit a4f62d3fca5d63a3a98fc341050c0e72a33ad72d
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Sat Oct 5 12:29:11 2024 +0200
+
+    181 word abstract with grammatical mistakes
+
+commit 4562d339d6d939d9786995b52ad40850ecff7891
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Thu Oct 3 13:28:13 2024 +0200
+
+    Added first citation and started making the article structure
+
+commit bfb076821f85f35832db9648e4a3e23e7329e94e
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 1 15:06:38 2024 +0200
+
+    Created branch: Predbežna verzia
+
+commit 53116f3177d56fc796fd39e8c2ffbeab18e11d80
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 1 14:54:21 2024 +0200
+
+    Kompilácia pomocou TexWorks
+
+commit 068b3b0fe291c126bafcde571be655aabf531819
+Author: lahodna::piskotka <timonfillo10@gmail.com>
+Date:   Tue Oct 1 14:45:36 2024 +0200
+
+    Inicializácia repozitára
+
+commit 0cb51fb4b6dbe49242ed4bb63f28f9898ca626d3
+Author: Piskopat <54437068+LubimPiskoty@users.noreply.github.com>
+Date:   Tue Oct 1 14:22:55 2024 +0200
+
+    Initial commit
