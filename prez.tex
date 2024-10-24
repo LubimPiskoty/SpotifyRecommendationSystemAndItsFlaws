@@ -4,7 +4,7 @@
 \documentclass{beamer}
 
 %\usetheme{Warsaw}
-\usetheme{Antibes}
+\usetheme{Frankfurt}
 %\usetheme{JuanLesPins}
 %\usetheme{Goettingen}
 
@@ -12,7 +12,7 @@
 %\usecolortheme{dolphin}
 %\usecolortheme{rose}
 % https://deic.uab.cat/~iblanes/beamer_gallery/
-\usecolortheme{beaver}
+\usecolortheme{seagull}
 
 %\useoutertheme[]{sidebar}
 
@@ -24,6 +24,7 @@
 \usepackage{url}
 
 \usepackage{listings}
+
 
 \lstset{language=C++,basicstyle=\fontsize{8}{9.6}\selectfont,showstringspaces=false,columns=fullflexible,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fullflexible}
 %\lstset{language=C,basicstyle=\fontsize{10.5}{12.6}\selectfont,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fixed}
@@ -95,15 +96,54 @@
 \titlepage
 \end{frame}
 
-\section{Úvod}
-\section{Jadro}
-\section{Záver}
-\section{Priestor pre diskusiu}
 
 \begin{frame}[fragile=singleslide]\frametitle{Prehľad}
 \tableofcontents
 \end{frame}
 
+\section{Úvod}
+\begin{frame}[fragile=singleslide]\frametitle{Digitalizácia hudby}
+\begin{itemize}
+	\item Prístup k hudbe sa vďaka internetu rozšíril na celý svet
+	\item Umožnili tomu hlavne streamovacie platformy ako napríklad Spotify, Youtube Music a Apple Music
+	\item Umelci teraz môžu osloviť publikum na celom svete, čím sa otvárajú nové príležitosti na trhu hudby
+\end{itemize}
+\end{frame}
+
+\section{Globalizácia hudby}
+\begin{frame}[fragile=singleslide]\frametitle{Dosah hudby a jej vplyv}
+\begin{itemize}
+	\item Umelci svoju hudbu môžu zdieľať s kýmkoľvek pripojeným na internet
+	\item Objavili sa nové trhy s hudbou, vďaka ktorým sa menším umelcom ľahšie darí.
+	\item Táto zmena urobila z hudby skutočne globálny priemysel
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{graphics/spotify_revenue_graph.png}
+
+\begin{table}[htb]
+\centering
+\resizebox{0.8\linewidth}{!}{
+
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Artist Category} & \textbf{Monthly Listeners} & \textbf{Estimated Yearly Earnings} & \textbf{\% of Total Artists} \\ \hline
+Superstar Artists    & 5M+             & \$1M+              & <1\% \\\hline
+Mid-Tier Artists     & 500K-5M         & \$100K - \$1M      & 5\% \\\hline
+Indie/DIY Artists    & 100K-500K       & \$10K - \$100K     & 20\% \\\hline
+Small/Niche Artists  & <100K           & <\$10K              & 74\% \\\hline
+\end{tabular}
+}
+
+\end{table}
+\caption{Úrovne výnosov zo streamovania interpretov na Spotify !CITETHIS!}
+\end{figure}
+\end{frame}
+
+
+\end{document}
 
 % príkaz \ssection by vytvoril zvláštný slajd s názvom časti - v krátkych prezentáciách to prekáža, lebo oberá o čas
 \section{Odrazky}
@@ -121,101 +161,3 @@
 
 \section{Obrazok}
 \begin{frame}[fragile=singleslide]\frametitle{Logo fiit}
-
-\includegraphics[width=\linewidth]{fiitLogo/nahlad.jpg}
-
-\end{frame}
-
-%
-%
-%\section{Ďalšia časť}
-%
-%\begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
-%\begin{itemize}
-%\item Nejaký text
-%\item Ďalší text -- \emph{zvýraznený text}
-%\item \emp{Kľúčová poznámka} % príkaz definovaný v preambule
-%
-%% odrážka s odkazom na zdroj:
-%\item Bol použitý balík beamer\footcite{\url{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
-%\end{itemize}
-%\end{frame}
-%
-%
-%\begin{frame}[fragile=singleslide]\frametitle{Slajd len s obrázkom}
-%%\includegraphics[scale=.35]{diagram.pdf}
-%% pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
-%% scale určuje veľkosť obrázku
-%
-%{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
-%\end{frame}
-%
-%
-%\begin{frame}[fragile=singleslide]\frametitle{Zvýraznenie syntaxe}
-%\begin{itemize}
-%\item Na zvýraznenie syntaxe stačí použiť balík listings so správne nastaveným programovacím jazykom
-%\begin{lstlisting}
-%int na_druhu(int i) {
-%   return i * i;
-%}
-%
-%int main() {
-%   printf("%d", na_druhu(118));
-%   return 0;
-%}
-%\end{lstlisting}
-%
-%\item Jazyk C++ je ešte zaujímavejší: je multiparadigmový\footcite{\url{J. O. Coplien. Multi-Paradigm Design for C++. Addison-Wesley, 1998.}}
-%\end{itemize}
-%\end{frame}
-%
-%
-%\begin{frame}[fragile=singleslide]\frametitle{Rámiky}
-%\begin{poznamka}
-%Text možno uviesť v rámiku
-%\end{poznamka}
-%
-%\begin{itemize}
-%\item Program
-%
-%\begin{program}
-%\begin{lstlisting}
-%void main() {
-%   printf("%d", na_druhu(118));
-%}
-%
-%void na_druhu(int i) {
-%   return i * i;
-%}
-%\end{lstlisting}
-%\end{program}
-%
-%\item Výstup
-%\begin{vystup}
-%\begin{lstlisting}
-%13924
-%\end{lstlisting}
-%\end{vystup}
-%
-%\end{itemize}
-%\end{frame}
-
-
-
-%\section*{Zhodnotenie a ďalšia práca}
-%% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
-%
-%\begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie a ďalšia práca}
-%\begin{itemize}
-%\item Každá prezentácia musí byť nejako uzavretá
-%\item Ale vždy je čo robiť ďalej\ldots{}
-%\end{itemize}
-%\end{frame}
-
-
-\end{document}
-
-
-
-
-Text \end{document} za príkazom \end{document} LaTeX ignoruje, takže tu môžete odkladať veci (aj celé slajdy), ktoré nechcete vymazať, lebo ich ešte možno budete potrebovať, avšak ich v danom momente nechcete mať v slajdoch.
