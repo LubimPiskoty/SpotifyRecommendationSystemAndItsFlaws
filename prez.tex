@@ -25,6 +25,7 @@
 
 \usepackage{listings}
 \usepackage{moresize}
+\usepackage{svg}
 
 
 \lstset{language=C++,basicstyle=\fontsize{8}{9.6}\selectfont,showstringspaces=false,columns=fullflexible,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fullflexible}
@@ -86,7 +87,7 @@
 \title{Spotify recommendation system and its flwas
 }
 
-\date{\footnotesize 22. Október 2024}
+\date{\footnotesize 29. Október 2024}
 
 
 
@@ -189,24 +190,36 @@ Small/Niche Artists  & <100K           & <\$10K              & 74\% \\\hline
 \end{frame}
 
 \begin{frame}[fragile=singleslide]\frametitle{Ako odporúčací system funguje?}
-	Core Algorithms
-	Explore key algorithms like collaborative filtering, content-based filtering, and deep learning models.
-	Spotify uses data from listener behavior, song characteristics, and contextual factors to make recommendations.
-	These systems are essential for managing Spotify's vast music library.
-	!! DIAGRAM !!
+\begin{itemize}
+	\item Collaborative filtering
+	\item Content-based filtering
+	\item Natural language models
+	\item Temporal analysis
+	\item User data analysis
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile=singleslide]
+	\begin{figure}
+	\includegraphics[width=0.8\linewidth]{graphics/diagram.jpg}
+	\caption{Spotify recommndation system diagram}
+	\end{figure}
 \end{frame}
 
-\section{Impact on Artists and Creativity}
-\begin{frame}[fragile=singleslide]\frametitle{Algorithmic Influence on Music Creation}
-	Artists and labels increasingly craft music to exploit recommendation algorithms.
-	Trends in popular music are often driven by what performs well in the recommendation system, potentially limiting creative freedom.
-	Music designed for the algorithm is often tailored to broader audiences to gain more streams and revenue.
+\section{Určovanie trendov}
+\begin{frame}[fragile=singleslide]\frametitle{Dôsledky pre umelcov}
+\begin{itemize}
+	\item Umelci pre úspech musia hudbu upravovať aby vyhovovala odporúčaciemu systému
+	\item Toto vedia k tvorbe trendov, ktoré vlastne závisia od odporúčacieho systému
+	\item Týmto sa obmedzuje voľnosť kreativity umelcov alternatívnych žánrov
+\end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Monetization and Streams}
-	Streaming income is tied to the number of plays and engagement driven by recommendations.
-	Artists may prioritize commercial success over artistic innovation to fit algorithmic preferences.
-	Smaller artists can use these algorithms to gain visibility but may face challenges against larger, more commercialized content.
+\begin{frame}\frametitle{Dôsledky pre poslucháčov}
+\begin{itemize}
+	\item Systém ma problém odporučiť novú hudbu pre nepopulárne žánre.
+	\item Cyklické odporúčanie, kvôli zlému vyhodnoteniu dát
+	\item Zužovanie žánrov a krabičkovanie hudby
+\end{itemize}
 \end{frame}
 
 \section{Q\&A}
