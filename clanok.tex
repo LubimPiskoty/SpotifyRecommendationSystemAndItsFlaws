@@ -1,146 +1,142 @@
 
-    % Metódy inžinierskej práce
+% Metódy inžinierskej práce
 
-    \documentclass[10pt,twoside,slovak,a4paper]{article}
+\documentclass[10pt,twoside,slovak,a4paper]{article}
 
-    \usepackage[slovak,english]{babel}
-    %\usepackage[T1]{fontenc}
-    \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
-    \usepackage[utf8]{inputenc}
-    \usepackage{graphicx}
-    \usepackage{url} % príkaz \url na formátovanie URL
-    \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
-    \usepackage{wrapfig}
+\usepackage[slovak,english]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url} % príkaz \url na formátovanie URL
+\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+\usepackage{wrapfig}
 
-    \usepackage{cite}
-    %\usepackage{times}
+\usepackage{cite}
+%\usepackage{times}
 
-    \pagestyle{headings}
+\pagestyle{headings}
 
-    \title{Spotify recommendation system and its flaws\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2024/25, vedenie: Mgr. Yevheniia Kataieva, PhD.}} % meno a priezvisko vyučujúceho na cvičeniach
+\title{Spotify recommendation system and its flaws\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2024/25, vedenie: Mgr. Yevheniia Kataieva, PhD.}} % meno a priezvisko vyučujúceho na cvičeniach
 
-    \author{Timon Lumír Fillo\\[2pt]
-    {\small Slovenská technická univerzita v Bratislave}\\
-    {\small Fakulta informatiky a informačných technológií}\\
-    {\small \texttt{xfillo@stuba.sk}}
-    }
+\author{Timon Lumír Fillo\\[2pt]
+{\small Slovenská technická univerzita v Bratislave}\\
+{\small Fakulta informatiky a informačných technológií}\\
+{\small \texttt{xfillo@stuba.sk}}
+}
 
 
-    \date{\small \today} % upravte
+\date{\small\today} % upravte
 
-    \selectlanguage{english}
-    \begin{document}
+\selectlanguage{english}
+\begin{document}
 
-    \maketitle
+\maketitle
 
-    \begin{abstract}
+\begin{abstract}
 
-    The digitalization of music has revolutionized the way we access, perceive and experience music, with companies such as Spotify, YouTube Music, and Apple Music that offer online music streaming of millions of tracks for anyone that has access to the internet. This has made globalization of music possible and enabled artists to, more effortlessly reach their target audience on the other side of the globe, which has in turn opened up new music markets all around the world and enabled even small artists to make a living from music production and because a significant market with a great influence on economics. All of this would not be possible without a recommendation system that can accurately categorize and find music that will satisfy the listener. While these systems provide relevant music recommendations, they come at the cost of indirectly altering the creative process of creators and limit creativity at the expense of generating income. This factor is mostly prevalent in trending music that is made specifically to exploit the recommendation system's inner workings with the aim of targeting a wider audience, earning revenue, and receiving more streams. In this article we will explore what algorithms Spotify's recommendation system consists of, how these algorithms affect the listeners and thier listening experience, and how they affect the artists creative process and record labels earnings.
+The digitalization of music has revolutionized the way we access, perceive, and experience music, with companies such as Spotify, YouTube Music, and Apple Music that offer online music streaming of millions of tracks for anyone that has access to the internet. This has made globalization of music possible and enabled artists to more effortlessly reach their target audience on the other side of the globe, which has in turn opened up new music markets all around the world and enabled even small artists to make a living from music production and because a significant market with a great influence on economics. All of this would not be possible without a recommendation system that can accurately categorize and find music that will satisfy the listener. While these systems provide relevant music recommendations, they come at the cost of indirectly altering the creative process of creators and limit creativity at the expense of generating income. This factor is mostly prevalent in trending music that is made specifically to exploit the recommendation system's inner workings with the aim of targeting a wider audience, earning revenue, and receiving more streams. In this article we will explore what algorithms Spotify's recommendation system consists of, how these algorithms affect the listeners and their listening experience, and how they affect the artists creative process and record labels earnings.
 
-    \end{abstract}
+\end{abstract}
 
-    \section{Introduction}
-    The advent of digital music streaming changed the way listeners interacted with music, creating a global platform where anyone with an internet connection could instantly access millions of songs. Venues like Spotify, YouTube Music, and Apple Music had also made music more accessible to reach and make money, leveling the playing field in a music industry once dominated by major labels and traditional media.
+\section{Introduction}
+The advent of digital music streaming changed the way listeners interacted with music, creating a global platform where anyone with an internet connection could instantly access millions of songs. Venues like Spotify, YouTube Music, and Apple Music had also made music more accessible to reach and make money, leveling the playing field in a music industry once dominated by major labels and traditional media.
 
-    A key driver of this shift is the role of recommendation systems, which help listeners discover new music that suits their tastes and preferences. Powered by sophisticated algorithms, Spotify's recommendation system analyzes huge amounts of data, including user listening habits, musical content, and broad cultural trends, and identifies music categories and generates personalized playlists. However, the impact of recommendation systems goes beyond just managing playlists. It has also influenced artists's creative decisions.
+A key driver of this shift is the role of recommendation systems, which help listeners discover new music that suits their tastes and preferences. Powered by sophisticated algorithms, Spotify's recommendation system analyzes huge amounts of data, including user listening habits, musical content, and broad cultural trends, and identifies music categories and generates personalized playlists. However, the impact of recommendation systems goes beyond just managing playlists. It has also influenced artists's creative decisions.
 
-    As more artists prepare their work for greater visibility in recommendation systems, questions arise about the impact of these systems on artistic creativity and diversity in the music industry. This paper explores the inner workings that drive Spotify's recommendation system and examines just how much of an effect this process has on artists creativity. By understanding the mechanisms behind these recommendation processes, we can understand their impact on contemporary music production, distribution, and consumption.
-    % Pointa je ukázať ako spotify recommendation system funguje a ako jeho fungovanie ovplyvnuje celý hudboný industry
-    % Vplyv trendov na recommendation systémy a spätne
-    % Kritika že recommendation system preferuje krátke a vysoko emočne zafarbené skladby čím sa z trhu vytláčajú vážnejšie žánre, ktoré majú dlhšie skladby a niesú nositeľmi silného affektu
-    \section{Spotify}\label{spotify}
-    % Čo je spotify, čo ponúka, aký ma vplyv na hudbu a víziu
-    Spotify, launched in Sweden in 2008, is one of the world's leading music streaming services, offering users access to a vast library of audio files that includes music, podcasts, and audiobooks.
-    By 2023, Spotify had grown its user base to over 500 million active users across more than 180 countries, transforming the ways in which people discover, share, and experience music\cite{spotify}. As a leader in the streaming industry, Spotify's business model emphasizes both accessibility and personalization, with free, ad-supported access together with premium subscriptions that offer an uninterrupted experience.
-    A key to Spotify's popularity is its focus on personalized music recommendations, aimed at increasing user engagement and encouraging music discovery. Through curated playlists like \textit{Discover Weekly} and \textit{Release Radar}, as well as generated \textit{Daily Mixes} and \textit{Daylist}\cite{Freeman_Gibbs_Nansen_2022} Spotify lets users discover new music that fits their preferences, adjusted to their personal preferences. The focus on personalized music has made Spotify a significant platform not only for listeners but also for artists and labels trying to reach audiences around the globe.
+As more artists prepare their work for greater visibility in recommendation systems, questions arise about the impact of these systems on artistic creativity and diversity in the music industry. This paper explores the inner workings that drive Spotify's recommendation system and examines just how much of an effect this process has on artists creativity. By understanding the mechanisms behind these recommendation processes, we can understand their impact on contemporary music production, distribution, and consumption.
+% Pointa je ukázať, ako Spotify recommendation system funguje a ako jeho fungovanie ovplyvňuje celý hudobný industry.
+% Vplyv trendov na recommendation systémy a spätne
+% Kritika, že recommendation system preferuje krátke a vysoko emočne zafarbené skladby, čím sa z trhu vytláčajú vážnejšie žánre, ktoré majú dlhšie skladby a nie sú nositeľmi silného affektu
+\section{Spotify}\label{spotify}
+% Čo je Spotify, čo ponúka, aký má vplyv na hudbu a víziu
+Spotify, launched in Sweden in 2008, is one of the world's leading music streaming services, offering users access to a vast library of audio files that includes music, podcasts, and audiobooks.
+By 2023, Spotify had grown its user base to over 500 million active users across more than 180 countries, transforming the ways in which people discover, share, and experience music\cite{spotify}. As a leader in the streaming industry, Spotify's business model emphasizes both accessibility and personalization, with free, ad-supported access together with premium subscriptions that offer an uninterrupted experience.
+A key to Spotify's popularity is its focus on personalized music recommendations, aimed at increasing user engagement and encouraging music discovery. Through curated playlists like \textit{Discover Weekly} and \textit{Release Radar}, as well as generated \textit{Daily Mixes} and \textit{Daylist}\cite{Freeman_Gibbs_Nansen_2022}, Spotify lets users discover new music that fits their preferences, adjusted to their personal preferences. The focus on personalized music has made Spotify a significant platform not only for listeners but also for artists and labels trying to reach audiences around the globe.
 
-    Spotify's approach to music streaming also provides opportunities for artists to reach listeners. While traditional music spreading was controlled by record labels, Spotify gives the same engagement opportunities to both independent and label-backed artists to publish music that reaches global audiences\cite{hodgson}. Indie and niche artists, particularly, benefit from Spotify's recommendation system in the way of receiving wider target audience publicity, which could improve their visibility and streaming revenue at the cost of adhering to the recommendation system architecture.
+Spotify's approach to music streaming also provides opportunities for artists to reach listeners. While traditional music spreading was controlled by record labels, Spotify gives the same engagement opportunities to both independent and label-backed artists to publish music that reaches global audiences. cite{hodgson}. Indie and niche artists, particularly, benefit from Spotify's recommendation system in the way of receiving wider target audience publicity, which could improve their visibility and streaming revenue at the cost of adhering to the recommendation system architecture.
 
-    \section{Business Model and Revenue Generation}
-    Spotify operates on a “freemium” model, offering free and premium access to users\cite{hodgson}. Free-tier subscription model comes with advertisements and limited selection options, meaning that you can only choose an album but not specific song from that album, while premium-tier subscribers pay for an advertisement free listening experience and offline music access. Spotify earns from these premium subscriptions and advertisements, and a part of this revenue is redistributed to artists and rights holders based on the quantity of streams their music accumulates. This means that spotify earns on both premium users through thier subscriptions and also from free-tier users in the form of advertisement that companies pay to spotify. Premium subscription make up 87\% of total revenue \cite{mei2024influential} which makes the focus on listeners satisfaction even more significant because their business model relies.
+\section{Business Model and Revenue Generation}
+Spotify operates on a “freemium” model, offering free and premium access to users\cite{hodgson}. The free-tier subscription model comes with advertisements and limited selection options, meaning that you can only choose an album but not a specific song from that album, while premium-tier subscribers pay for an advertisement-free listening experience and offline music access. Spotify earns from these premium subscriptions and advertisements, and a part of this revenue is redistributed to artists and rights holders based on the quantity of streams their music accumulates. This means that Spotify earns on both premium users through their subscriptions and also from free-tier users in the form of advertisements that companies pay to Spotify. Premium subscriptions make up 87\% of total revenue \cite{mei2024influential}, which makes the focus on listeners satisfaction even more significant because their business model relies on it.
 
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\linewidth]{graphics/spotify_revenue_graph.png}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{graphics/spotify_revenue_graph.png}
 
-    \centering
+\centering
 
-    \begin{tabular}{|l|c|c|c|}
-    \hline
-    \textbf{Artist Category} & \textbf{Monthly Listeners} & \textbf{Earnings} & \textbf{\% of Total Artists} \\ \hline
-    Superstar Artists & 5M+ & \$1M+ & $<1\%$ \\\hline
-    Mid-Tier Artists & 500K-5M & \$100K - \$1M & 5\% \\\hline
-    Indie/DIY Artists & 100K-500K & \$10K - \$100K & 20\% \\\hline
-    Small/Niche Artists & $<100K$ & $<\$10K$ & 74\% \\\hline
-    \end{tabular}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Artist Category} &\textbf{Monthly Listeners} &\textbf{Earnings} &\textbf{\% of Total Artists} \\\hline
+Superstar Artists & 5M+ & \$1M+ & $<1\%$ \\\hline
+Mid-Tier Artists & 500K-5M & \$100K - \$1M & 5\% \\\hline
+Indie/DIY Artists & 100K-500K & \$10K - \$100K & 20\% \\\hline
+Small/Niche Artists & $<100K$ & $<\$10K$ & 74\% \\\hline
+\end{tabular}
 
-    \caption{Artist streaming revenue levels on Spotify\cite{spotify}}
-    \end{figure}
+\caption{Artist streaming revenue levels on Spotify\cite{spotify}}
+\end{figure}
 
-    \section{Recommendation system}\label{recommendationsystem}
-    % Ako funguje, na akých dátach vyhodnocuje odporúčanie
-    % Ako sa spotify vypláca artistov a ako to ovplyvňuje recommendation system
-    Spotifies recommendation system combines different data to generate its recommendation from algorithms such as:\cite{hodgson}\cite{jacobson2016}
-    \begin{itemize}
-    \item Collaborative Filtering
-    \item Content-based Filtering
-    \item Natural language models
-    \item Temporal audio analysis
-    \item User data analysis
-    \end{itemize}
-    
+\section{Recommendation system}\label{recommendationsystem}
+% Ako funguje, na akých dátach vyhodnocuje odporúčanie
+% Ako sa Spotify vypláca artistov a ako to ovplyvňuje recommendation system
+Spotify's recommendation system combines different data to generate its recommendation from algorithms such as:\cite{hodgson}\cite{jacobson2016}
+\begin{itemize}
+\item Collaborative Filtering
+\item Content-based Filtering
+\item Natural language models
+\item Temporal audio analysis
+\item User data analysis
+\end{itemize}
 
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\linewidth]{graphics/diagram.jpg}
-    \caption{Spotify recommendation system algorithm diagram}
-    \end{figure}
 
-    \subsection{Collaborative Filtering}
-    This algorithm tries to match one users listening patterns to the listening patterns of other users on the platform and links similar users based on their user data, then it can better evaluate the relevance of a song using data from users that it deems similar and that have already listened to it. The thought behind is that this algorithm finds a person with similar taste profile and incorporates the other users data to make a better recommendation. The negative side of this approach is that statistically two users with similar song history are likely to have similar tastes but this is not always the case because people listen to music for many different reasons and this can cause the algorithm to believe that those people have similar taste profiles but in reality their expectations differ. For example one user can like songs from perticular singer and another another user can like songs written by particular writer and this singer and song writer have collaborated on one album and these users have listen to it extensively, this leads the algorithm into believing that they both like the same thing which is not really true on the larger scale and will lead to badly personalized recommendation.
-    
-    \subsection{Content-based Filtering}
-    Songs firstly have to be categorized by hand and with the help of machine learning\cite{spotify2024annotations}, because it uses information such as the artist name, song language, country, genre, etc. Then, based on this data, the algorithm can match potential music candidates and create personalized playlists such as \textit{Rock Mix}, \textit{1990s Mix}, \textit{Beatles Mix}, based onto metatags such as \textit{Rock genre}, \textit{90th decade}, \textit{Beatles artist}. This may look simple at first glance but it is an effective algorithm that can reliabily find patterns withing the metatags and find the right songs to recommend. The negative part is that it can only work with predefined metatags and therefore cannot recognize dynamic variables such as how popular the song is or seasonal relevance such as winter carols in the winter months. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{graphics/diagram.jpg}
+\caption{Spotify recommendation system algorithm diagram}
+\end{figure}
 
-    \subsection{Natural language models}
-    Natural language models use machine learning models to analyze the name of the song, lyrics, artists name, blogs, critics reviews and all the text that it has access to, and break it into tokens representing significant words and adjectives such as ``Sad'' or ``Blue'' and uses them to match songs with similar tokens. With this approach it can match and rank artist with similar reviews which means that it can react better to dynamic variables such as trends and find its own key words to use but it falls victim to the quality of data it recieves meaning that indie artist and smaller artists do not have many review written about them so this algorithm cannot evaluate any sensible results.
+\subsection{Collaborative Filtering}
+This algorithm tries to match one users listening patterns to the listening patterns of other users on the platform and links similar users based on their user data, then it can better evaluate the relevance of a song using data from users that it deems similar and that have already listened to it. The thought behind is that this algorithm finds a person with similar taste profile and incorporates the other users data to make a better recommendation. The negative side of this approach is that statistically two users with similar song history are likely to have similar tastes but this is not always the case because people listen to music for many different reasons and this can cause the algorithm to believe that those people have similar taste profiles but in reality their expectations differ. For example one user can like songs from perticular singer and another another user can like songs written by particular writer and this singer and song writer have collaborated on one album and these users have listen to it extensively, this leads the algorithm into believing that they both like the same thing which is not really true on the larger scale and will lead to badly personalized recommendation.\cite{madathil2017music}
 
-    \subsection{Temporal Audio analysis}
-    Analyzes the actual song to figure out information such as track length, music key, bpm, loudness, time signature.
-    %//TODO: Add more
+\subsection{Content-based Filtering}
+Songs firstly have to be categorized by hand and with the help of machine learning\cite{spotify2024annotations}, because it uses information such as the artist name, song language, country, genre, etc. Then, based on this data, the algorithm can match potential music candidates and create personalized playlists such as \textit{Rock Mix}, \textit{1990s Mix}, \textit{Beatles Mix}, based onto metatags such as \textit{Rock genre}, \textit{90th decade}, \textit{Beatles artist}. This may look simple at first glance but it is an effective algorithm that can reliabily find patterns withing the metatags and find the right songs to recommend. The negative part is that it can only work with predefined metatags and therefore cannot recognize dynamic variables such as how popular the song is or seasonal relevance such as winter carols in the winter months.
 
-    \subsection{User data analysis}
-    Collects personal information about users such as gender, age, music history, liked songs, user created playlists, native tongue and geografic location enabling futher processing to find new patterns in user song preferences and creates user taste profile which other algorithms use to generate their recommendations. 
-    %//TODO: Find something more to add and cite a bit
+\subsection{Natural language models}
+Natural language models use machine learning models to analyze the name of the song, lyrics, artists name, blogs, critics reviews and all the text that it has access to, and break it into tokens representing significant words and adjectives such as ``Sad'' or ``Blue'' and uses them to match songs with similar tokens. With this approach it can match and rank artist with similar reviews which means that it can react better to dynamic variables such as trends and find its own key words to use but it falls victim to the quality of data it recieves meaning that indie artist and smaller artists do not have many review written about them so this algorithm cannot evaluate any sensible results.
 
-    \section{Human interaction reliability}
-    The whole recommendation system works off statistically sorting popular music and therefore lacks it's own \textit{character} in the sense that it cannot categorize music that nobody listens to and that comes from unknown artists, meaning there is no statistical data to gather and evaluate; there is only a song that needs human character to be judged and categorized. Even the categories that are used to sort the songs are made by humans for humans; an algorithm with character would be possible to make, but it would be a lot less precise for the whole userbase than a statistically driven one. Still, I believe that such an option should be present for users that are trying to find something brand new.
-    %//TODO: DOPISAT VIAC
+\subsection{Temporal Audio analysis}
+Temporal audio analysis is a versitile tool that can be used to figure out the song's harmonicity, tempo, key.\cite{794763}
+It can also figure out where the hotspots of the songs are, how happy, sad, or angry each segment is, and therefore categorize the song. This approach can create playlists like \textit{Running playlist} that gathers songs above certain bpm because they aid in keeping optimal tempo while running or \textit{Dance mix} with songs that adhere to specific \textit{dancibility} traits. Although this approach seems to be best at evaluating music in its rawest form, it is still too vague for it to solve every problem because humans categorize music on a lot more factors than just pure notes, for example, lyrics, popularity, or sentiment, which this algorithm does not incorporate and therefore is a part of the complex process.
 
-    \section{Trend focused recommendation}\label{trends}
-    % Ktoré žánre profitujú z tohto recommendation system a ktoré zase nie
-    % Nové žánre alebo adaptácia už existujúcich ako dôsledok recommendation systemu
-    Most of the people that use Spotify are students younger than 25 years\cite{bjorklund2022exploratory}, therefore the recommendation system is heavily influenced by trends and music interesting to the younger generation \cite{christiana2021hyperpop}. Although the system can separate users based on their age using \textit{Collaborative filtering}, this can also lump together listeners that expect different music genres just based on their similar age. 
+\subsection{User data analysis}
+This algorithm collects personal information about users such as gender, age, music history, liked songs, user created playlists, native tongue and geografic location enabling futher processing to find new patterns in user song preferences and creates user taste profile which other algorithms use to generate their recommendations upon. While it is not that complicated by itself, it is one of the most significant algorithm because this data is vital for proper categorization and effective evaluation.
 
-    This merit is not sufficent for the many different preferences that users may have and better categorization of user data could lead to improved recommendation for each category of users. An important point to notice is that trends are results of the preference of majority which generates most of the income but that does not mean that Spotify should focus on recommending the most earning artists because it then potentionaly loose revenue on the more niche users that 
-    %//TODO: DOPISAT VIAC AND CITE
 
-    \section{Overlistened music}
-    In some cases, the user can listen to one song for hundreds of minutes within one week, which makes the recommendation system suggest such songs even more, even though the user is probably annoyed by this track and would like to find some new song similar to this or something entirely different. A playlist that would be made specifically to avoid such overlistened songs would be an effective solution without the need for extensive changes to the existing system. This playlist would be made with the focus of avoiding already liked songs\cite{curtis2022quest} and also incorporate the listen time into the equation.
-    %//TODO: DOPISAT VIAC
+\section{Human interaction reliability}
+The whole recommendation system works off statistically sorting popular music and therefore lacks it's own \textit{character} in the sense that it cannot categorize music that nobody listens to and that comes from unknown artists, meaning there is no statistical data to gather and evaluate; there is only a song that needs human character to be judged and categorized. Even the categories that are used to sort the songs are made by humans for humans; an algorithm with character would be possible to make, but it would be a lot less precise for the whole userbase than a statistically driven one. Still, I believe that such an option should be present for users that are trying to find something brand new. With few questions asking user how they like to listen to music and what experience they expect the recommendation system could more effectively deliver brand new, unranked songs to users that want to find those songs and utilize them for the ranking. Another option would be to create new algorithms that could help with this case of \textit{`cold start'}.
 
-    \section{Conclusion}\label{conclusion} % prípadne iný variant názvu
-    From the presented information, I would suggest that the recommendation system should focus on improving on fixing its `cold start' problem by having a handmade playlist for each significant category or creating a separate algorithm that would create just those `cold start' playlist, but it would have to avoid taking trends into consideration because then it would just fall victim to the same behavior that the other algorithms present. Alternativaly, the algorithms could undergo a rework with consideration of the issues mentioned here and incorporate methods such as mapping emotions to colors\cite{dawson2021spotify}.
-    Another idea for improvement would be to let users choose how popular music they expect from the recommendation system and this number would directly relate to the tracks popularity metadata, therefore letting users control their recommendation more effectively becuae not every user expectation and taste can be observed just by their age, language, gender and listening history because some expectation can never realize themeselves enough for the recommendation system to pick up on them and recognize them.
-    %//TODO: DOPISAT VIAC
+\section{Trend focused recommendation}\label{trends}
+% Ktoré žánre profitujú z tohto recommendation system a ktoré zase nie
+% Nové žánre alebo adaptácia už existujúcich ako dôsledok recommendation systemu
+Most of the people that use Spotify are students younger than 25 years\cite{bjorklund2022exploratory}, therefore the recommendation system is heavily influenced by trends and music interesting to the younger generation \cite{christiana2021hyperpop}. Although the system can separate users based on their age using \textit{Collaborative filtering}, this can also lump together listeners that expect different music genres just based on their similar age.
 
-    %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
+This merit is not sufficent for the many different preferences that users may have and better categorization of user data could lead to improved recommendation for each category of users. An important point to notice is that trends are results of the preference of majority which generates most of the income but that does not mean that Spotify should focus on recommending the most earning artists because it then potentionaly loose revenue on the more niche users that make up majority of spotifies artists. Spotify has revealed that they are trying to make music fair all artists and bit by bit they are working up to it\cite{hodgson}.
 
-    % týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
-    %\newpage
-    %\listoftodos[Notes]
-    %//TODO: NAJST ESTE 2 ZDROJE
-    \bibliographystyle{abbrv} % prípadne alpha, abbrv alebo hociktorý iný
-    \bibliography{literatura}
+\section{Overlistened music}
+In some cases, the user can listen to one song for hundreds of minutes within one week, which makes the recommendation system suggest such songs even more, even though the user is probably annoyed by this track and would like to find some new song similar to this or something entirely different. A playlist that would be made specifically to avoid such overlistened songs would be an effective solution without the need for extensive changes to the existing system. This playlist would be made with the focus of avoiding already liked songs\cite{curtis2022quest} and also incorporate the listen time into the equation.
+Because of this aspect it may be hard for small artists to get recognition from the recommendation system because they don't quiet fit into the already existing genres and because they do not get recommended they can not get categorized and this feedback loop strikes them out of the spotify recommendation system.
 
-    \end{document}
+\section{Conclusion}\label{conclusion} % prípadne iný variant názvu
+From the presented information, I would suggest that the recommendation system should focus on improving on fixing its `cold start' problem by having a handmade playlist for each significant category or creating a separate algorithm that would create just those `cold start' playlist, but it would have to avoid taking trends into consideration because then it would just fall victim to the same behavior that the other algorithms present. Alternativaly, the algorithms could undergo a rework with consideration of the issues mentioned here and incorporate methods such as mapping emotions to colors\cite{dawson2021spotify}.
+Another idea for improvement would be to let users choose how popular music they expect from the recommendation system and this number would directly relate to the tracks popularity metadata, therefore letting users control their recommendation more effectively becuae not every user expectation and taste can be observed just by their age, language, gender and listening history because some expectation can never realize themeselves enough for the recommendation system to pick up on them and recognize them.
+
+%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
+
+% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
+%\newpage
+%\listoftodos[Notes]
+\bibliographystyle{abbrv} % prípadne alpha, abbrv alebo hociktorý iný
+\bibliography{literatura}
+
+\end{document}
